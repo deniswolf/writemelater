@@ -2,9 +2,10 @@ var db = require('../../db');
 
 var IdeaSchema = new db.mongoose.Schema({
   text: String,
-  owners: [db.mongoose.Schema.Types.ObjectId],
+  updated: { type: Date, default: Date.now },
   drafts: [{
-    text: String
+    text: String,
+    updated: { type: Date, default: Date.now },
   }]
 });
 
