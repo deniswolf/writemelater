@@ -17,6 +17,12 @@ action.index = function() {
   });
 };
 
+action.new = function() {
+  var self = this;
+
+  self.render();
+};
+
 action.show = function() {
   var self = this,
     id = self.param('id');
