@@ -1,0 +1,6 @@
+//- render to display idea by default
+form(id="#{idea._id}",method='post', action='/ideas/#{idea._id}')
+  input(type="hidden", name="_method", value="put")
+  textarea(name='idea[text]', placeholder='|')
+    |#{idea.text}
+  input(type="submit", value='+')
