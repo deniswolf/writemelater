@@ -108,25 +108,6 @@ action.update = function() {
   }
 };
 
-action.before('update', function deleteIfEmptyText (next) {
-  var self = this,
-      id = self.param('id'),
-      text;
-    if (self.param('idea')) text = self.param('idea').text;
-
-    if (!text && id){
-      Model.findByIdAndRemove(
-        id,
-        function(err){
-          if (err) console.log('Idea: failed to destroy empty with req:',this.req);
-          self.res.send(204);
-        }
-      );
-    } else {
-      next();
-    }
-});
-
 action.destroy = function() {
   var self = this,
     id = self.param('id');
@@ -137,7 +118,7 @@ action.destroy = function() {
       id,
       function(err){
         if (err) console.log('Idea: failed to destroy with req:',this.req);
-        self.res.send(204);
+        self.redirect('/');
       }
     );
   } else {
