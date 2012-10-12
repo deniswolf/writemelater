@@ -13,7 +13,11 @@ action.index = function() {
   Model.find(null,null,{sort:'updated'}, function(err, data){
     if (err) console.log('Idea: failed to index with req:',this.req);
     self.ideas = data;
-    self.render();
+    self.respond(
+      {
+        html:true,
+        json: true
+      });
   });
 };
 
