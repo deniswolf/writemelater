@@ -1,5 +1,5 @@
 //- render to display idea by default
-form(id="#{idea._id}",method='post', action='/ideas/#{idea._id}')
+form(id="#{idea._id}",method='post', action='/ideas/#{idea.id}')
   input(type="hidden", name="_method", value="put")
   textarea(name='idea[text]', placeholder='|')
     |#{idea.text}
