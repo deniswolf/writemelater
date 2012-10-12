@@ -51,6 +51,9 @@ $(document).ready(function(){
 							c('render stuff from post resp:',data, self);
 							form.replaceWith(data);
 						});
+				} else if ( update && !idea) {
+					//than it was deleted, so we have to hide this
+					form.fadeOut();
 				}
 			})
 			.error(function onError () {
