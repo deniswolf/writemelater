@@ -10,7 +10,9 @@ $(document).ready(function(){
 
 			$.get('/ideas/new')
 				.success(function addToDom(data){
-				el.append(data);
+					el.prepend(data);
+					var first_form = el.find('form:first');
+					first_form.find('textarea').focus();
 			});
 	}
 
