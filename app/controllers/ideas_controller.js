@@ -66,12 +66,13 @@ action.create = function() {
   var self = this,
     idea = self.param('idea');
 
+
   if (idea){
     Model.create(
       idea,
-      function(err){
+      function(err, data){
         if (err) console.log('Idea: failed to create with req:',this.req);
-        self.redirect('/');
+        self.res.send(200, data);
       }
     );
   } else {
@@ -88,9 +89,9 @@ action.update = function() {
     Model.findByIdAndUpdate(
       id,
       idea,
-      function(err){
+      function(err, data){
         if (err) console.log('Idea: failed to update with req:',this.req);
-        self.redirect('/');
+        self.res.send(200, data);
       }
     );
   } else {
