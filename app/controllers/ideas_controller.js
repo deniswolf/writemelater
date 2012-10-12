@@ -10,9 +10,14 @@ action.index = function() {
   var self = this;
   self.user = self.req.user;
 
-  Model.find(null,null,{sort:'updated'}, function(err, data){
+  Model.find(null,null, function(err, data){
     if (err) console.log('Idea: failed to index with req:',this.req);
-    self.ideas = data;
+    var ideas = data.sort(
+        //sort comments by 'created' field, new first
+        function(a, b){
+          return b.updated.getTime() - a.updated.getTime();
+        });
+    self.ideas = ideas;
     self.respond(
       {
         html:true,
