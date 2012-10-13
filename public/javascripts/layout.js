@@ -59,6 +59,24 @@ $(document).ready(function(){
 
 	}
 
+	function deleteIdea (id) {
+		var	idea = $('#ideas .idea#'+id),
+				form = idea.find('form.delete'),
+				data = form.serialize(),
+				url = form.attr('action');
+
+		$.post(url, data)
+		// if no id - re-render this element as 'edit'
+			.success(function afterDelete() {
+				idea.fadeOut(function afterFadeOut (argument) {
+					idea.remove();
+				});
+			})
+			.error(function onError () {
+				window.alert('f-cup in delete!');
+			});
+
+	}
 	$('p#new').click(addNewIdea);
 
 	$('#ideas').on('submit','form',commitIdea);
