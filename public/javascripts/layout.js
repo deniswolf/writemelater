@@ -77,6 +77,63 @@ $(document).ready(function(){
 			});
 
 	}
+
+	function deleteIfEmptyIdea(event){
+		// if idea has no text and user click 'backspace'
+		// display warning about delete
+		//   if he starts print text - disable warning and return
+		//   if he didn't press backspace for 1 sec - disable warning and return
+		//   else on his second click - delete idea
+		console.log('and text is:', $(event.srcElement).val());
+		var input = $(event.srcElement),
+				idea = input.closest('.idea'),
+				text = input.val(),
+				warning = idea.find('.alarm.dare-backspace'),
+				wasWarned = input.attr('data-delete-warning');
+
+				if (text) return;
+				if (wasWarned) {
+					var id = input.closest('.idea').attr('id');
+					deleteIdea(id);
+					console.log('go to delete');
+					warning.fadeOut();
+					return;
+				}
+
+				input.attr('data-delete-warning','true');
+				warning.fadeIn(function(){
+					window.setTimeout(
+						function(){
+							if (input.attr('data-delete-warning')){
+								input.attr('data-delete-warning','');
+								warning.fadeOut();
+							}
+						},
+						1500);
+				});
+	}
+
+	function enableDeleteIdeaOnBackspace (argument) {
+		var keyOriginalFilter = key.filter;
+
+		$('#ideas')
+			.on('focus','.idea form .idea-text',function(){
+				key.filter = function filterModified (event) {
+					var tagName = (event.target || event.srcElement).tagName;
+					return !(tagName == 'INPUT' || tagName == 'SELECT');
+				};
+				key.setScope('idea');
+			})
+			.on('blur', '.idea form .idea-text', function(){
+				key.filter = keyOriginalFilter;
+				key.setScope('all');
+			});
+
+		key('backspace', 'idea', deleteIfEmptyIdea);
+	}
+
+	enableDeleteIdeaOnBackspace();
+
 	$('p#new').click(addNewIdea);
 
 	$('#ideas').on('submit','form',commitIdea);
