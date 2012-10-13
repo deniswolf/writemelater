@@ -1,7 +1,6 @@
 (function($){
-	var c = function(){
-		console.log(arguments);
-	};
+	//scope keymaster.js
+	var key = window.key;
 $(document).ready(function(){
 
 	function addNewIdea () {
@@ -120,7 +119,7 @@ $(document).ready(function(){
 			.on('focus','.idea form .idea-text',function(){
 				key.filter = function filterModified (event) {
 					var tagName = (event.target || event.srcElement).tagName;
-					return !(tagName == 'INPUT' || tagName == 'SELECT');
+					return !(tagName === 'INPUT' || tagName === 'SELECT');
 				};
 				key.setScope('idea');
 			})
