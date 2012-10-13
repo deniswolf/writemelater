@@ -47,7 +47,6 @@ $(document).ready(function(){
 				if (! update && idea._id) {
 					$.get('/ideas/'+idea._id+'/edit')
 						.success(function(data){
-							c('render stuff from post resp:',data, self);
 							form.replaceWith(data);
 						});
 				}
@@ -83,7 +82,6 @@ $(document).ready(function(){
 		//   if he starts print text - disable warning and return
 		//   if he didn't press backspace for 1 sec - disable warning and return
 		//   else on his second click - delete idea
-		console.log('and text is:', $(event.srcElement).val());
 		var input = $(event.srcElement),
 				idea = input.closest('.idea'),
 				text = input.val(),
@@ -94,7 +92,6 @@ $(document).ready(function(){
 				if (wasWarned) {
 					var id = input.closest('.idea').attr('id');
 					deleteIdea(id);
-					console.log('go to delete');
 					warning.fadeOut();
 					return;
 				}
