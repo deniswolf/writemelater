@@ -31,10 +31,8 @@ $(document).ready(function(){
 			});
 	}
 
-	function commitIdea () {
-		var event = arguments[0],
-				form = $(this),
-				self = this,
+	function commitIdea (event) {
+		var form = $(this),
 				update = (form.find('input[name=_method]').val() === 'put'),
 				data = form.serialize(),
 				url = form.attr('action');
@@ -44,8 +42,8 @@ $(document).ready(function(){
 		$.post(url, data)
 		// if no id - re-render this element as 'edit'
 			.success(function checkIfNew (idea) {
-				if (! update && idea._id) {
-					$.get('/ideas/'+idea._id+'/edit')
+				if (! update && idea.id) {
+					$.get('/ideas/'+idea.id+'/edit')
 						.success(function(data){
 							form.replaceWith(data);
 						});
