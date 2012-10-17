@@ -1,15 +1,9 @@
-//- render to display idea by default
-div.idea(id="#{idea.id}")
-  div.alarm.dare-backspace(style="display:none")
-    |press Backspace again, I dare use, I double-dare you
-  form.delete(method='post',
-    action='/ideas/'+idea.id,
-    class='button_to')
-    input(type="hidden", name="_method", value="delete")
-    //- input.btn.btn-danger(type='submit', value='x')
+form.delete(method='post',  action='/ideas/'+idea.id)
+  input(type="hidden", name="_method", value="delete")
+  input(type="submit", value='save')
 
-  form.edit(method='post', action='/ideas/#{idea.id}')
-    input(type="hidden", name="_method", value="put")
-    textarea.idea-text(name='idea[text]', placeholder='|')
-      |#{idea.text}
-    input(type="submit", value='+')
+form.edit(method='post', action='/ideas/#{idea.id}')
+  input(type="hidden", name="_method", value="put")
+  textarea(name='idea[text]')
+    |#{idea.text}
+  input(type="submit", value='save')

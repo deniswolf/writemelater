@@ -1,8 +1,10 @@
 extends ../layout
 
 block content
-  p
-    |Welcome, sweety
-  p#new
-    ||
-  div#ideas
+  div
+    for idea in ideas
+      div
+        p
+          =idea.text
+          a(href="/ideas/#{idea.id}/edit") (edit)
+

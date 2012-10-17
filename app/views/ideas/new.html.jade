@@ -1,4 +1,7 @@
-//- render this under cursor when click on tabletop (or blinkink cursor)
-form(method='post', action='/ideas')
-  textarea(name='idea[text]', placeholder='|')
-  input(type="submit", value='+')
+extends ../layout
+
+block content
+
+  form.new(method='post', action='/ideas/')
+    textarea(name='idea[text]')
+    input(type="submit", value='save')

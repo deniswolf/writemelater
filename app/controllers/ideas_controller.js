@@ -13,7 +13,6 @@ action.index = function() {
   Model.find(null,null, function(err, data){
     if (err) console.log('Idea: failed to index with req:',this.req);
     var ideas = data.sort(
-        //sort comments by 'created' field, new first
         function(a, b){
           return b.updated.getTime() - a.updated.getTime();
         });
@@ -81,7 +80,8 @@ action.create = function() {
       idea,
       function(err, data){
         if (err) console.log('Idea: failed to create with req:',this.req);
-        self.res.send(200, data);
+        // self.res.send(200, data);
+        self.redirect('/');
       }
     );
   } else {
@@ -100,7 +100,8 @@ action.update = function() {
       idea,
       function(err, data){
         if (err) console.log('Idea: failed to update with req:',this.req);
-        self.res.send(200, data);
+        // self.res.send(200, data);
+        self.redirect('/');
       }
     );
   } else {
