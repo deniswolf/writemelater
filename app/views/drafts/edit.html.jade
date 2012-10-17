@@ -1,0 +1,5 @@
+form.edit(method='post', action='/ideas/#{idea_id}/drafts/#{draft.id}')
+  input(type="hidden", name="_method", value="put")
+  textarea.draft-text(name='draft[text]', placeholder='|')
+    |#{draft.text}
+  input(type="submit", value='+')
