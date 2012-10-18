@@ -44,7 +44,7 @@ action.show = function() {
 
 action.edit = function() {
   var self = this,
-    id = self.param(id),
+    id = self.param('id'),
     idea_id = self.param('idea_id');
     self.idea_id = idea_id;
 

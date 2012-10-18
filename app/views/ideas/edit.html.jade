@@ -1,6 +1,6 @@
 form.delete(method='post',  action='/ideas/'+idea.id)
   input(type="hidden", name="_method", value="delete")
-  input(type="submit", value='save')
+  input(type="submit", value='delete')
 
 form.edit(method='post', action='/ideas/#{idea.id}')
   input(type="hidden", name="_method", value="put")
