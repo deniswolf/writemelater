@@ -6,7 +6,7 @@
 // Guide on [routing](http://locomotivejs.org/guide/routing.html) for additional
 // information.
 module.exports = function routes() {
-  this.root('ideas#index');
+  this.root('home#show');
 
   this.resources('ideas', function(){
     this.resources('drafts');
