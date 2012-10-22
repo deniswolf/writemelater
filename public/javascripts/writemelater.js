@@ -29,6 +29,7 @@ $('document').ready(function(){
           parentArray.unshift(new Idea(text));
       };
   };
+  window.i = ko.applyBindings(new IdeaMMVCModel());
 
   //attach event handlers
   $("#ideas").on("click", ".remove", function() {
