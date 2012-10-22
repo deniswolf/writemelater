@@ -21,6 +21,8 @@ a.add {
 /* TEXT AREA: glowing and other nice stuff*/
 
 textarea{
+  box-sizing: border-box;
+  width: 100%;
   resize:none;
   opacity: 0.85;
   color: inherit;
