@@ -8,3 +8,30 @@ body {
 a {
   color: #00B7FF;
 }
+
+/* TEXT AREA: glowing and other nice stuff*/
+
+textarea{
+  resize:none;
+  opacity: 0.85;
+  color: inherit;
+  font: inherit;
+  background-color: rgba(1,1,1,0.1);
+  border-radius: 8px;
+  margin:5px 0px 10px 0px;
+  padding:10px;
+  border:#999 1px solid;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+}
+
+textarea:focus{
+  resize:none;
+  opacity: 1;
+  color: inherit;
+  font: inherit;
+  background-color: rgba(1,1,1,0.1);
+  outline:none;
+  border:#00B7FF 1px solid;
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
