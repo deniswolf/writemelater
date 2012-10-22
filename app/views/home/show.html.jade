@@ -9,7 +9,7 @@ block content
   ul#ideas(data-bind='template: { name: "ideaTmpl", foreach: ideas }')
 
   script(id="ideaTmpl", type="text/html")
-    |<li>
+    |<li class="idea">
     |      <a class="remove" href="#"> x </a>
     |      <textarea data-bind="value: text, valueUpdate: 'afterkeydown'"></textarea>
     |      <a class="add" href="#"> add child </a>
