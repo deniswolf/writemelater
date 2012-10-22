@@ -58,7 +58,7 @@ $('document').ready(function(){
 
   $("#new").on("click", ".create", function(){
     var ideas = ko.contextFor($('#ideas')[0]).$root.ideas;
-    ideas.push(new Idea('nya!'));
+    ideas.unshift(new Idea('nya!'));
   });
 
 
