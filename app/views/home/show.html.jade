@@ -2,3 +2,16 @@ extends ../layout
 
 block content
   |Hello, Dolly!
+
+  div#new
+    a.create(href="#") create
+
+  ul#ideas(data-bind='template: { name: "ideaTmpl", foreach: ideas }')
+
+  script(id="ideaTmpl", type="text/html")
+    |<li>
+    |      <a class="remove" href="#"> x </a>
+    |      <textarea data-bind="value: text, valueUpdate: 'afterkeydown'"></textarea>
+    |      <a class="add" href="#"> add child </a>
+    |      <ul data-bind='template: { name: "ideaTmpl", foreach: children }'></ul>
+    |  </li>
