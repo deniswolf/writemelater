@@ -17,6 +17,12 @@ $('#ideas').on('input, keyup', 'textarea', function autoResize () {
   resizeElement(this);
 });
 
+setTimeout(function resizeOnLoadedElements () {
+  $.each(
+    $('#ideas textarea'),
+    function(i,domElement){ resizeElement(domElement);}
+  );
+},1000);
 
 
 });
