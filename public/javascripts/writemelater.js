@@ -47,18 +47,17 @@ $('document').ready(function(){
   $("#ideas").on("click", ".add", function() {
       //retrieve the context
       var context = ko.contextFor(this),
-          childName = context.$data.text() + " child",
           parentArray = context.$data.ideas || context.$data.children;
 
       //add a child to the appropriate parent, calling a method off of the main view model (context.$root)
-      context.$root.addChild(childName, parentArray);
+      context.$root.addChild('', parentArray);
 
       return false;
   });
 
   $("#new").on("click", ".create", function(){
     var ideas = ko.contextFor($('#ideas')[0]).$root.ideas;
-    ideas.unshift(new Idea('nya!'));
+    ideas.unshift(new Idea(''));
   });
 
 
