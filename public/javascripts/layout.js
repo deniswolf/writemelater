@@ -1,6 +1,9 @@
 (function($){
 $(document).ready(function(){
 
+/* TEXTAREA auto-resize code */
+/* some copypaste from the net + hack on it */
+/* HERE BE DRAGONS! */
 function resizeElement (e) {
   var offsetHeight = e.offsetHeight - e.clientHeight;
 

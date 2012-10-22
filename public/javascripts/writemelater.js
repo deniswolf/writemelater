@@ -1,11 +1,14 @@
 (function($){
 $('document').ready(function(){
+  /* PAYLOAD */
 
   var ipsum = {
     short:"I thought what I'd do was, I'd pretend I was one of those deaf-mutes.",
     medium:"That way I wouldn't have to have any goddamn stupid useless conversations with anybody. If anybody wanted to tell me something they'd have to write it on a piece of paper and shove it over to me. They'd get bored as hell doing that after a while, and then I'd be through with having conversations for the rest of my life.",
     long:"Here's to the crazy ones\nThe misfits\nThe rebels\nThe troublemakers\nThe round pegs in the square holes\nThe ones who see things differently\nThey're not fond of rules\nAnd they have no respect for the status quo\nYou can quote them, disagree with them, glorify or vilify them\nAbout the only thing you can't do is ignore them\nBecause they change things\nThey push the human race forward\nAnd while some may see them as the crazy ones, we see genius\nBecause the people who are crazy enough to think they can change the world, are the ones who do.",
   };
+
+  /* MODELS */
 
   // data model
   var Idea = function(text, children) {
@@ -29,7 +32,11 @@ $('document').ready(function(){
           parentArray.unshift(new Idea(text));
       };
   };
+
+  /* INIT Knockout */
   window.i = ko.applyBindings(new IdeaMMVCModel());
+
+  /* CONTROLS */
 
   //attach event handlers
   $("#ideas").on("click", ".remove", function() {
