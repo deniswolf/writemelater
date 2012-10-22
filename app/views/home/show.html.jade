@@ -11,7 +11,7 @@ block content
   script(id="ideaTmpl", type="text/html")
     |<li class="idea">
     |      <a class="remove" href="#"> x </a>
-    |      <textarea data-bind="value: text, valueUpdate: 'afterkeydown'"></textarea>
     |      <a class="add" href="#"> add child </a>
+    |      <textarea data-bind="value: text, valueUpdate: 'afterkeydown'"></textarea>
     |      <ul data-bind='template: { name: "ideaTmpl", foreach: children }'></ul>
     |  </li>
