@@ -9,6 +9,15 @@ a {
   color: #00B7FF;
 }
 
+/* CONTROLS */
+
+a.remove {
+  float: left;
+}
+a.add {
+  float: right;
+}
+
 /* TEXT AREA: glowing and other nice stuff*/
 
 textarea{
