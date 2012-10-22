@@ -8,9 +8,9 @@ $('document').ready(function(){
   };
 
   var ipsum = {
-    short:"Okay, so, tell me about the hash bars.",
-    medium:"What's wrong with that? Nobody ever robs restaurants. Why not? Bars, liquor stores, gas stations; you get your head blown off sticking up one of them. Restaurants, on the other hand, you catch with their pants down. They're not expecting to get robbed. Not as expectant, anyway.",
-    long:"I been saying that shit for years. And if you heard it, that meant your ass. I never gave much thought to what it meant. I just thought it was some cold-blooded shit to say to a motherfucker before I popped a cap in his ass. But I saw some shit this morning made me think twice. See, now I'm thinking, maybe it means you're the evil man, and I'm the righteous man, and Mr. 9 millimeter here, he's the shepherd protecting my righteous ass in the valley of darkness. Or it could mean you're the righteous man and I'm the shepherd and it's the world that's evil and selfish. I'd like that. But that shit ain't the truth. The truth is, you're the weak, and I'm the tyranny of evil men. But I'm trying, Ringo. I'm trying real hard to be the shepherd.",
+    short:"I thought what I'd do was, I'd pretend I was one of those deaf-mutes.",
+    medium:"That way I wouldn't have to have any goddamn stupid useless conversations with anybody. If anybody wanted to tell me something they'd have to write it on a piece of paper and shove it over to me. They'd get bored as hell doing that after a while, and then I'd be through with having conversations for the rest of my life.",
+    long:"Here's to the crazy ones\nThe misfits\nThe rebels\nThe troublemakers\nThe round pegs in the square holes\nThe ones who see things differently\nThey're not fond of rules\nAnd they have no respect for the status quo\nYou can quote them, disagree with them, glorify or vilify them\nAbout the only thing you can't do is ignore them\nBecause they change things\nThey push the human race forward\nAnd while some may see them as the crazy ones, we see genius\nBecause the people who are crazy enough to think they can change the world, are the ones who do.",
   };
 
   // mmvc model
