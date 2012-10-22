@@ -26,7 +26,7 @@ $('document').ready(function(){
       ]);
 
       this.addChild = function(text, parentArray) {
-          parentArray.push(new Idea(text));
+          parentArray.unshift(new Idea(text));
       };
   };
 
