@@ -69,3 +69,21 @@ textarea:focus{
   overflow: visible;
   height: auto;
 }
+
+.CodeMirror-lines {
+  border-radius: 8px;
+
+
+  border:rgba(255,255,255,0.25) 1px solid;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+
+
+  box-sizing: border-box;
+  background-color: rgba(35,35,35,1);
+
+
+}
+
+.cm-s-monokai {background: #232323; color: #E6E0DB;}
+
