@@ -61,3 +61,11 @@ textarea:focus{
   border:#00B7FF 1px solid;
   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
 }*/
+
+
+/* CODEMIRROR */
+
+.CodeMirror-scroll {
+  overflow: visible;
+  height: auto;
+}
