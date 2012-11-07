@@ -31,10 +31,24 @@ $('document').ready(function(){
       this.addChild = function(text, parentArray) {
           parentArray.unshift(new Idea(text));
       };
+
+      this.applyCodeMirror = function applyCodeMirror (elements) {
+        elements.forEach(function codeMirrize (element) {
+          var el = $(element).find('>textarea')[0];
+          var c = CodeMirror.fromTextArea(
+            el,
+            {
+              mode: 'markdown',
+              theme: 'monokai',
+              onChange: function(){ c.save(); }
+            });
+        });
+      };
   };
 
   /* INIT Knockout */
-  window.i = ko.applyBindings(new IdeaMMVCModel());
+  window.ideaMMVCmodel = new IdeaMMVCModel();
+  window.i = ko.applyBindings(window.ideaMMVCmodel);
 
   /* CONTROLS */
 
