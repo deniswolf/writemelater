@@ -1,8 +1,6 @@
 extends ../layout
 
 block content
-  |Hello, Dolly!
-
   div#new
     a.create(href="#") create
 
@@ -10,8 +8,8 @@ block content
 
   script(id="ideaTmpl", type="text/html")
     |<li class="idea">
-    |      <a class="remove" href="#"> x </a>
-    |      <a class="add" href="#"> add child </a>
+    |      <a class="remove" href="#"> - </a>
+    |      <a class="add" href="#"> + </a>
     |      <textarea data-bind="value: text, valueUpdate: 'afterkeydown'"></textarea>
     |      <ul data-bind='template: { name: "ideaTmpl", foreach: children, afterRender: ideaMMVCmodel.applyCodeMirror }'></ul>
     |  </li>

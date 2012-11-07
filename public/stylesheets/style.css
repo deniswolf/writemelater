@@ -1,11 +1,12 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 24px "Ubuntu", sans-serif;
   color: #E6E0DB;
   background-color: #232323;
 }
 
 a {
+  text-decoration: none;
   color: #00B7FF;
 }
 
@@ -72,7 +73,7 @@ textarea:focus{
 
 .CodeMirror-lines {
   border-radius: 8px;
-
+  font: 16px "Ubuntu", sans-serif;
 
   border:rgba(255,255,255,0.25) 1px solid;
   transition: all 0.25s ease-in-out;
